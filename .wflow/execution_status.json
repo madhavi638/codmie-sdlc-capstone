@@ -1,9 +1,9 @@
 {
   "workflow_status": "IN_PROGRESS",
   "execution_mode": "RESUME",
-  "current_phase": "gap_analyzer",
-  "completed_phases": ["gap_analyzer"],
+  "current_phase": "create_jira_tickets",
+  "completed_phases": ["gap_analyzer", "create_jira_tickets"],
   "next_phase": "SDLC_Requirements_Assistant",
   "rerun_phase": "",
-  "reason": "Phase 1 gap analysis completed"
+  "reason": "Phase 1 Jira tickets created"
 }
