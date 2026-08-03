@@ -1,9 +1,9 @@
 {
-  "workflow_status": "STARTED",
-  "execution_mode": "INITIAL",
-  "current_phase": "",
-  "completed_phases": [],
-  "next_phase": "gap_analyzer",
+  "workflow_status": "IN_PROGRESS",
+  "execution_mode": "RESUME",
+  "current_phase": "SDLC_Planning_Assistant",
+  "completed_phases": ["gap_analyzer", "create_jira_tickets", "SDLC_Requirements_Assistant"],
+  "next_phase": "SDLC_Planning_Assistant",
   "rerun_phase": "",
-  "reason": "Initial workflow execution"
+  "reason": "Resuming from Phase 3 - Planning after Phase 1 and 2 completed"
 }
