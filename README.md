@@ -71,3 +71,35 @@ The Employee Management System is a web application built using Flask that allow
 - [Flask Documentation](https://flask.palletsprojects.com/)
 - [SQLite Documentation](https://www.sqlite.org/docs.html)
 - [Werkzeug Documentation](https://werkzeug.palletsprojects.com/)
+
+# WMS - Warehouse Management System
+
+## Project Structure
+codmie-sdlc-capstone/
+├── frontend/ # React + TypeScript (Vite)
+├── backend/ # Node.js + Express + SQLite
+├── db/
+│ ├── migrations/001_init.sql
+│ └── seed.sql
+
+## Setup & Run
+### Backend
+```bash
+cd backend
+npm install
+cp .env.example .env
+node server.js
+Frontend
+cd frontend
+npm install
+cp .env.example .env
+npm run dev
+API Endpoints
+POST /api/auth/login
+GET /api/inventory
+GET /api/shipments
+GET /api/locations
+Tech Stack
+Frontend: React, TypeScript, Vite, Axios, React Router
+Backend: Node.js, Express, JWT
+Database: SQLite (better-sqlite3)
