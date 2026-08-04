@@ -1,5 +1,7 @@
 export function uniqueEmail(prefix = 'wms.qa') {
-  const ts = Date.now();
+  // Parallel workers can share a millisecond, and app.py rejects duplicate emails,
+  // so mix in a random suffix.
+  const ts = `${Date.now()}.${Math.random().toString(36).slice(2, 8)}`;
   return `${prefix}+${ts}@example.com`;
 }
 
