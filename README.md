@@ -1,105 +1,14 @@
-# 💼 Workforce Management System
+# Workforce Management System (WMS)
 
-## 📜 Description
-The Employee Management System is a web application built using Flask that allows you to manage employees, their shifts, attendance, and tasks efficiently. Users can sign up, log in, and access different functionalities to maintain employee records and statistics.
+Web-based Workforce Management System built with Flask and SQLite to manage employees, shifts, attendance, tasks, and view high-level performance metrics.
 
-## 🌟 Features
-- **User Authentication**: Secure login and signup functionality.
-- **Employee Management**: Add, view, and delete employee records.
-- **Shift Management**: Assign and manage employee shifts.
-- **Attendance Tracking**: Record and manage employee attendance.
-- **Task Management**: Create, view, and delete tasks assigned to employees.
-- **Statistics Dashboard**: View overall statistics on employees, tasks, shifts, and attendance.
-- **Responsive Design**: User-friendly interface accessible on various devices.
+- Backend: Flask (Python)\n- Database: SQLite (`basedatabase.db``)\n- UI: server-side Jinja HTML templates + CSS
 
-# 📷 Screenshots
-# Home
-![home](https://github.com/rakheshkrishna2005/workforce-management-system/blob/main/static/screenshots/home.png)
+## Features
 
-## Login
-![login](https://github.com/rakheshkrishna2005/workforce-management-system/blob/main/static/screenshots/login.png)
-
-## Sign Up
-![sign up](https://github.com/rakheshkrishna2005/workforce-management-system/blob/main/static/screenshots/sign%20up.png)
-
-## Manage Employee
-![manage employee](https://github.com/rakheshkrishna2005/workforce-management-system/blob/main/static/screenshots/manage%20employee.png)
-
-## Shift Scheduling
-![shift](https://github.com/rakheshkrishna2005/workforce-management-system/blob/main/static/screenshots/shift%20scheduling.png)
-
-## Attendance Tracking
-![attendance](https://github.com/rakheshkrishna2005/workforce-management-system/blob/main/static/screenshots/attendance%20tracking.png)
-
-## Task Assignment
-![task](https://github.com/rakheshkrishna2005/workforce-management-system/blob/main/static/screenshots/task%20assignment.png)
-
-## Performance Dashboard
-![dashboard](https://github.com/rakheshkrishna2005/workforce-management-system/blob/main/static/screenshots/performance%20dashboard.png)
-
-## 🔧 Tech Stack
-- **Backend**: Flask
-- **Database**: SQLite
-- **Frontend**: HTML, CSS, Bootstrap
-- **Security**: Werkzeug for password hashing
-
-## 🚀 Installation and Usage
-1. **Clone the repository**:
-   ```bash
-   git clone https://github.com/rakheshkrishna2005/workforce-management-system.git
-   ```
-
-2. **Clone the repository**:
-   ```bash
-   cd workforce-management-system
-   ```
-
-3. **Install the required packages**:
-   ```bash
-   pip install -r requirements.txt
-   ```
-
-4. **Run the application**:
-   ```bash
-   python app.py
-   ```
-
-5. **Access the application**:
-   Open your web browser and go to `http://127.0.0.1:5000`.
-
-## 📚 Additional Resources
-- [Flask Documentation](https://flask.palletsprojects.com/)
-- [SQLite Documentation](https://www.sqlite.org/docs.html)
-- [Werkzeug Documentation](https://werkzeug.palletsprojects.com/)
-
-# WMS - Warehouse Management System
-
-## Project Structure
-codmie-sdlc-capstone/
-├── frontend/ # React + TypeScript (Vite)
-├── backend/ # Node.js + Express + SQLite
-├── db/
-│ ├── migrations/001_init.sql
-│ └── seed.sql
-
-## Setup & Run
-### Backend
-```bash
-cd backend
-npm install
-cp .env.example .env
-node server.js
-Frontend
-cd frontend
-npm install
-cp .env.example .env
-npm run dev
-API Endpoints
-POST /api/auth/login
-GET /api/inventory
-GET /api/shipments
-GET /api/locations
-Tech Stack
-Frontend: React, TypeScript, Vite, Axios, React Router
-Backend: Node.js, Express, JWT
-Database: SQLite (better-sqlite3)
+- User authentication: signup, login, logout (Werkzeug password hashing)
+- Employee management: add, list, delete
+- Shift management: assign shifts to employees, list, delete
+- Attendance tracking: record present/absent, list, delete
+- Task management: assign tasks, set status (Pending/Completed), list, delete
+- Performance dashboard: aggregate counts for employees, tasks, shifts, attendance
