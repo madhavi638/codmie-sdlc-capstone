@@ -2,95 +2,93 @@
 
 Web-based Workforce Management System built with Flask and SQLite to manage employees, shifts, attendance, tasks, and view high-level performance metrics.
 
-## Prerequisites
+# Features
 
-- Python 3.10+ (3.9+ may work depending on dependencies, but 3.10+ is recommended)
-- pip (comes with most Python installs)
-- (Optional but recommended) `venv` for virtual environments
+- User authentication: signup, login, logout (session-based)
+- Employee management: add, list, delete
+- Shift management: assign, list, delete
+- Attendance tracking: record, list, delete
+- Task management: create, list, delete
+- Performance dashboard: counts for employees, tasks, shifts, present/absent
+- Server-side rendered UI (Jinja2 templates)
 
-## Setup
+# Tech Stack
 
-1. **Clone / download the project**
-   - Ensure you are in the project root directory (where `app.py` and `requirements.txt` are located).
+- Backend: Flask
+- Templates: Jinja2
+- Database: SQLite (local file `basedatabe.db`)
+- Security: Werkzeug password hashing
+
+# Prerequisites
+
+- Python 3.10+ recommended
+- pip
+- Git (for cloning)
+- Optional: virtual environment (`venv`)
+
+# Setup
+
+1. **Clone the repository**
+
+   ```bash
+   git clone https://github.com/madhavi638/codmie-sdlc-capstone.git
+   cd codmie-sdlc-capstone
+   ```
 
 2. **Create and activate a virtual environment**
 
-   **macOS / Linux**
-   - `python3 -m venv .venv`
-   - `source .venv/bin/activate`
+  **macOS / Linux**
+   ```bash
+   python3 -m venv .venv
+   source .venv/bin/activate
+   ```
 
-   **Windows (PowerShell)**
-   - `py -m venv .venv`
-   - `.venv\Scripts\Activate.ps1`
-
-   **Windows (cmd.exe)**
-   - `py -m venv .venv`
-   - `.venv\Scripts\activate.bat`
+  **Windows (PowerShell)**
+   ```bash
+   py -m venv .venv
+   .\env\Scripts\Activate.ps1
+   ```
 
 3. **Install dependencies**
-   - `pip install -r requirements.txt`
+
+   ```bash
+   pip install -r requirements.txt
+   ```
 
 4. **Database**
-   - The application uses SQLite and expects a database file named `basedatabase.db`.
-   - If the database is created automatically by the app, no manual step is required.
-   - If your project requires an existing `basedatabase.db`, ensure it is present in the project root (or wherever your app expects it).
 
-## Run
+   - The app uses SQLite and creates tables at startup via `database.init_db()` called from `app.py`.
+   - The database file is `database.db` in the project root. If it doesn't exist, it will be created on first run.
 
-1. **Start the Flask application**
-   - `python app.py`
+# Run
 
-2. **Open the application in your browser**
-   - Visit: `http://127.0.0.1:5000/`
+1. **Start the app**
+
+   ```bash
+   python app.py
+   ```
+
+2. **Open in browser**
+
+   - http://127.0.0.1:5000/
 
 3. **Stop the server**
-   - Press `Ctrl+C` in the terminal where it is running.
 
-## Test
+   - Press `Ctrl+C` in the terminal.
 
-Automated tests are **not included** in this project.
+# Test
 
-### Smoke test checklist (manual)
+There are **no automated tests** in this repository yet. Use the following manual smoke-test checklist:
 
-Use the checklist below to confirm the app works end-to-end after setup:
+- Auth: sign up, flows to login, log in, log out
+- Employees: add an employee, verify visible in list, delete
+- Shifts: add a shift for an employee, verify list, delete
+- Attendance: add present/absent record, verify list, delete
+- Tasks: add a task, set status, verify list, delete
+- Performance: confirm counts update after adding/deleting data
 
-1. **App boots**
-   - Run `python app.py` and confirm the server starts without errors.
-   - Load `http://127.0.0.1:5000/` and confirm you see the landing/login page.
+# Troubleshooting
 
-2. **Authentication**
-   - Sign up with a new username/password.
-   - Log out.
-   - Log back in with the same credentials.
-   - Confirm incorrect password fails as expected.
-
-3. **Employees**
-   - Add an employee.
-   - Confirm the employee appears in the employee list.
-   - Delete the employee and confirm it is removed.
-
-4. **Shifts**
-   - Assign a shift to an employee.
-   - Confirm it appears in the shift list.
-   - Delete the shift and confirm it is removed.
-
-5. **Attendance**
-   - Record attendance (present/absent) for an employee.
-   - Confirm it appears in the attendance list.
-   - Delete the attendance record and confirm it is removed.
-
-6. **Tasks**
-   - Create/assign a task to an employee.
-   - Confirm it appears in the task list with status `Pending`.
-   - Update/mark the task as `Completed` (if supported in UI).
-   - Delete the task and confirm it is removed.
-
-7. **Dashboard / Metrics**
-   - Open the performance/dashboard page.
-   - Confirm aggregate counts reflect the current data (employees, tasks, shifts, attendance).
-
-### Common troubleshooting
-
-- **Port already in use**: stop the process using port 5000, or change the port in `app.py` if needed.
-- **Module import errors**: confirm the virtual environment is activated and `pip install -r requirements.txt` completed successfully.
-- **Database issues**: confirm `basedatabase.db` is present (if required) and the app has permission to create/write to it.
+- **Port 5000 in use**: stop the process using that port or change the port in `app.py`.
+- **Module import errors**: ensure the virtual env is active and dependencies are installed.
+- **Database issues**: delete `database.db` to re-create a fresh schema (this will remove all data).
